@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+const url = "http://localhost:8080"; 
 const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card">
-      <img src={product.imageURL} alt={product.name} />
+      <img src={`${url}${product.imageURL}`} alt={product.name} />
       <h3>{product.name}</h3>
       <p className="price">R$ {product.price}</p>
   

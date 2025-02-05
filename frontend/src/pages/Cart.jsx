@@ -4,6 +4,8 @@ import api from '../services/api';
 import Loader from '../components/Loader';
 import React from 'react';
 
+
+const url = "https://localhost:8080";
 const Cart = () => {
   const [cart, setCart] = useState({ items: [] }); 
   const [loading, setLoading] = useState(true);
@@ -80,7 +82,7 @@ const Cart = () => {
           <div className="cart-items">
             {cart.items.map(item => (
               <div key={item.id} className="cart-item">
-                <img src={item.productImageUrl} alt={item.productName} />
+                <img src={`${url}${product.imageURL}`} alt={product.name} />
                 <div className="item-info">
                   <Link to={`/products/${item.productId}`}>{item.productName}</Link>
                   <p>Quantidade: {item.quantity}</p>

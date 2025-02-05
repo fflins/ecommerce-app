@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import api from '../services/api';
 import React from 'react';
 
+const url = "http://localhost:8080"; 
+
+
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -51,7 +54,8 @@ const ProductDetail = () => {
       {product && (
         <div className="product-detail-container">
           <div className="product-images">
-            <img src={product.imageURL} alt={product.name} />
+          <img src={`${url}${product.imageURL}`} alt={product.name} />
+
           </div>
           <div className="product-info">
             <h1>{product.name}</h1>
